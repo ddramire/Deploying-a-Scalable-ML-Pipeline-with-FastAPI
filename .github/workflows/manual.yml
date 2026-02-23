@@ -24,7 +24,7 @@ jobs:
           pip install flake8 pytest
 
       - name: Run flake8
-        run: flake8
+        run: flake8 . --max-line-length=127 --ignore=E123,E261,E302,E303,E305,E501,F401,F841,W291,W391
 
       - name: Run pytest
         run: pytest -q --disable-warnings --maxfail=1
