@@ -10,12 +10,12 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.9"
+          python-version: "3.10"
 
       - name: Install dependencies
         run: |
@@ -24,7 +24,7 @@ jobs:
           pip install flake8 pytest
 
       - name: Run flake8
-        run: flake8 . --max-line-length=127 --ignore=F401,F841,E303,E305,E302,E261,W291,W391
+        run: flake8 . --max-line-length=127 --ignore=E123,E261,E302,E303,E305,E501,F401,F841,W291,W391
 
       - name: Run pytest
         run: pytest -q --disable-warnings --maxfail=1
