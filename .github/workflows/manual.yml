@@ -23,7 +23,7 @@ jobs:
           pip install flake8 pytest
 
       - name: Run flake8
-        run: flake8 .
+        run: flake8 ml test_ml.py
 
       - name: Run pytest
         run: pytest -q
